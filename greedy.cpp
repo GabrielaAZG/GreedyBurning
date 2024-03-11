@@ -234,12 +234,15 @@ vector<int> GrP(int n, int k){
 int main(int argc, char **argv) {
     int n,m;
     string heuristic   = "Gr";
-    vector<string> instances = {"karate", "chesapeake","dolphins","rt-retweet","polbooks","adjnoun","ia-infect-hyper","C125-9","ia-enron-only","c-fat200-1","c-fat200-2","c-fat200-5","sphere","DD244","ca-netscience","infect-dublin","c-fat500-1","c-fat500-2","c-fat500-5","bio-diseasome","web-polblogs","DD687","rt-twitter-copen","DD68","ia-crime-moreno","DD199","soc-wiki-Vote","DD349","DD497","socfb-Reed98","lattice3D","bal_bin_tree_9","delaunay_n10","stufe","lattice2D","bal_ter_tree_6","email-univ","econ-mahindas","ia-fb-messages","bio-yeast"};
-    for(string instance : instances){
+    string instance = argv[1];
+    // cin>>instance;
+    //vector<string> instances = {"karate","chesapeake","dolphins","rt-retweet","polbooks","adjnoun","ia-infect-hyper","C125-9","ia-enron-only","c-fat200-1","c-fat200-2","c-fat200-5","sphere","DD244","ca-netscience","infect-dublin","c-fat500-1","c-fat500-2","c-fat500-5","bio-diseasome","web-polblogs","DD687","rt-twitter-copen","DD68","ia-crime-moreno","DD199","soc-wiki-Vote","DD349","DD497","socfb-Reed98","lattice3D","bal_bin_tree_9","delaunay_n10","stufe","lattice2D","bal_ter_tree_6","email-univ","econ-mahindas","ia-fb-messages","bio-yeast"};
+    //for(string instance : instances){
         graph.clear();
         d.clear();
         cout << "----" + instance + "----" << endl;
-        ifstream myfile ("C:\\Users\\perro\\Documents\\GBP\\cpp\\dataset\\" + instance + ".mtx");
+        ifstream myfile (instance);
+        //ifstream myfile ("C:\\Users\\perro\\Documents\\GBP\\cpp\\dataset\\" + instance + ".mtx");
         string line;
         stringstream check1(line);
         vector<string> tokens;
@@ -333,6 +336,6 @@ int main(int argc, char **argv) {
         }
         cout << endl << "Sequence size: " << best_burning_sequence.size() << endl;
         cout << endl;
-    }
+    //}
     return 0;
 }
